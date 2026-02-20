@@ -1,0 +1,6 @@
+rootProject.name = 'order-management'
+
+include 'shared-lib'
+include 'order-service'
+include 'shipping-service'
+include 'payment-service'
