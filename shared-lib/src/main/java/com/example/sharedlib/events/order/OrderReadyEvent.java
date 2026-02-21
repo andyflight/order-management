@@ -14,6 +14,7 @@ import java.util.Map;
 public class OrderReadyEvent implements BasePayload {
     String orderId;
     String customerId;
+    String orderName;
     BigDecimal totalPrice;
     String currency;
 

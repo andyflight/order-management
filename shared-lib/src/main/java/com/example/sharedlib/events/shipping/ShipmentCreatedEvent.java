@@ -13,6 +13,7 @@ import java.time.LocalDate;
 public class ShipmentCreatedEvent implements BasePayload {
     String orderId;
     String customerId;
+    String orderName;
     String trackingNumber;
     LocalDate estimatedDeliveryDate;
 }
