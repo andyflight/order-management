@@ -8,11 +8,9 @@ import org.springframework.stereotype.Component;
 import java.time.Instant;
 import java.util.UUID;
 
-@Component
-@NoArgsConstructor
 public class EventFactory {
 
-    public Event<BasePayload> create(BasePayload payload) {
+    public static Event<BasePayload> create(BasePayload payload) {
 
         return Event.builder()
                 .eventId(UUID.randomUUID().toString())
