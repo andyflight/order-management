@@ -4,21 +4,22 @@ plugins {
 
 dependencies {
     implementation project(':shared-lib')
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-kafka'
-    implementation 'org.springframework.boot:spring-boot-starter-liquibase'
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'org.postgresql:postgresql'
-    testImplementation 'org.springframework.boot:spring-boot-starter-actuator-test'
-    testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
-    testImplementation 'org.springframework.boot:spring-boot-starter-kafka-test'
-    testImplementation 'org.springframework.boot:spring-boot-starter-liquibase-test'
-    testImplementation 'org.springframework.boot:spring-boot-starter-validation-test'
-    testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:4.0.2'
+    implementation 'io.hypersistence:hypersistence-utils-hibernate-71:3.15.2'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:4.0.2'
+    implementation 'org.springframework.boot:spring-boot-starter-kafka:4.0.2'
+    implementation 'org.springframework.boot:spring-boot-starter-liquibase:4.0.2'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:4.0.2'
+    implementation 'org.springframework.boot:spring-boot-starter-web:4.0.2'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools:4.0.2'
+    runtimeOnly 'org.postgresql:postgresql:42.7.9'
+    testImplementation 'org.springframework.boot:spring-boot-starter-actuator-test:4.0.2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test:4.0.2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-kafka-test:4.0.2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-liquibase-test:4.0.2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-validation-test:4.0.2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test:4.0.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:6.0.2'
 }
 
 tasks.named('test') {
