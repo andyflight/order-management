@@ -7,6 +7,7 @@ import com.example.orderservice.common.IdGenerator;
 import com.example.orderservice.common.JsonMapper;
 import com.example.orderservice.domain.order.Order;
 import com.example.orderservice.domain.outbox.OutboxEvent;
+import com.example.orderservice.domain.outbox.OutboxStatus;
 import com.example.orderservice.service.usecases.SaveOrderUseCase;
 import com.example.orderservice.service.usecases.SaveOutboxUseCase;
 import com.example.sharedlib.events.order.OrderCreatedEvent;
@@ -29,6 +30,7 @@ public class OrderServiceImpl implements OrderService {
         var orderId = IdGenerator.generateId();
         var orderToSave = Order.builder()
                 .id(orderId)
+
                 .build();
         var savedOrder = saveOrderUseCase.saveOrder(orderToSave);
         var orderCreatedEvent = savedOrder.toOrderCreatedEvent();
@@ -37,7 +39,7 @@ public class OrderServiceImpl implements OrderService {
         var outbox = OutboxEvent.builder()
                 .id(outboxId)
                 .eventType(orderCreatedEvent.getClass().getSimpleName())
-                .status("PENDING")
+                .status(OutboxStatus.PENDING)
                 .event(event)
                 .createdAt(Instant.now())
                 .build();

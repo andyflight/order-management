@@ -18,6 +18,8 @@ public class OutboxEvent implements DomainModel {
     String aggregateId;
     String topic;
     Instant createdAt;
+    Instant processedAt;
     OutboxStatus status;
     Event<BasePayload> event;
+    Integer retryCount;
 }
